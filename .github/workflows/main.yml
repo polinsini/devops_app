@@ -23,7 +23,12 @@ jobs:
 
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
-
+    - name: Set working directory
+      run: |
+        cd ./myapp
+    - name: List files in the Docker build context
+      run: |
+        ls -l
     - name: Build Docker image
       run: |
         docker build -f ./myapp/Dockerfile .
