@@ -32,7 +32,7 @@ jobs:
     - name: Build Docker image
       run: |
         docker build -f ./myapp/Dockerfile ./myapp
-        docker run -d -p 8000:8000 my-django-app
+        docker run -d -p 8000:8000 
 
     - name: Install dependencies
       run: |
