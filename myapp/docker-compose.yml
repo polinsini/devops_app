@@ -1,0 +1,35 @@
+# docker-compose.yml
+version: '3.9'
+
+services:
+ 
+  myapp-db:
+    image: postgres:13
+    container_name: myapp-db
+    environment:
+      
+      POSTGRES_DB: database
+      POSTGRES_USER: polin_sini
+      POSTGRES_PASSWORD: '0000'
+      
+    ports:
+      - "5433:5432"
+  web:
+    build:
+      context: .
+    container_name: myapp-web-1
+    command: python manage.py runserver 0.0.0.0:8000 
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      -  myapp-db
+    environment:
+      - DATABASE_URL="postgres://polin_sini:0000@172.18.0.2:5432/database"
+volumes:
+  devops_db_data:
+
+networks:
+  default:
+    driver: bridge
