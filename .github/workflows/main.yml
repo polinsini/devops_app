@@ -28,7 +28,7 @@ jobs:
         cd ./myapp
     - name: List files in the Docker build context
       run: |
-        ls -l
+        ls -l ./myapp
     - name: Build Docker image
       run: |
         docker build -f ./myapp/Dockerfile .
