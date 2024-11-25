@@ -40,7 +40,7 @@ jobs:
 
     - name: Run migrations
       run: |
-        python manage.py migrate
+        python ./myapp/manage.py migrate
 
 
     - name: Clean up Docker containers
