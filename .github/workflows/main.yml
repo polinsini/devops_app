@@ -31,8 +31,8 @@ jobs:
         ls -l ./myapp
     - name: Build Docker image
       run: |
-    docker build -f ./myapp/Dockerfile -t my-django-app ./myapp
-    docker run -d -p 8000:8000 my-django-app
+        docker build -f ./myapp/Dockerfile -t my-django-app ./myapp
+        docker run -d -p 8000:8000 my-django-app
 
     - name: Install dependencies
       run: |
