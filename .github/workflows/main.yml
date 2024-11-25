@@ -26,7 +26,7 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t my-django-app .
+        docker build -f ./myapp/Dockerfile .
         docker run -d -p 8000:8000 my-django-app
 
     - name: Install dependencies
