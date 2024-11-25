@@ -38,10 +38,7 @@ jobs:
       run: |
         pip install -r ./myapp/requirements.txt
 
-    - name: Run migrations
-      run: |
-        python ./myapp/manage.py migrate
-
+    
 
     - name: Clean up Docker containers
       run: |
