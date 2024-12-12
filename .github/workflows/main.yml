@@ -26,11 +26,12 @@ jobs:
     - name: Set working directory
       run: |
         cd ./myapp
-    
+#-f путь -t тег для докера -d фоновый режим -p порты
     - name: Build Docker image
       run: |
         docker build -f ./myapp/Dockerfile -t my-django-app ./myapp
         docker run -d -p 8000:8000 my-django-app
+        
 
     - name: Install dependencies
       run: |
